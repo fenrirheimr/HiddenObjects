@@ -8,6 +8,7 @@ export class UIManager {
     private victoryMessage: VictoryMessage;
     private debugInfo: DebugInfo;
     private loadingScreen: LoadingScreen;
+    private helpText: PIXI.Text;
 
     constructor(
         private uiContainer: PIXI.Container,
@@ -22,9 +23,9 @@ export class UIManager {
 
     private createHelpText(): PIXI.Text {
         const text = new PIXI.Text({
-            text: 'Drag with mouse | Arrow keys / WASD',
+            text: 'Можно перетаскивть поле игры мышкой или перемещаться при помощи стрелочеки или W.A.S.D.',
             style: {
-                fontSize: 12,
+                fontSize: 13,
                 fill: 0xcccccc,
                 stroke: { color: 0x000000, width: 2 }
             }

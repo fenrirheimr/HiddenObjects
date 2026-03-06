@@ -38,9 +38,7 @@ export class ItemFactory {
             this.applyTransformations(sprite, itemData.attachment);
             sprite.anchor.set(0.5);
 
-            const nameLabel = this.createNameLabel(itemData.slot);
-            nameLabel.y = -sprite.height / 2 - 10;
-            sprite.addChild(nameLabel);
+            // УДАЛЕНО: создание и добавление nameLabel
 
             sprite.eventMode = 'static';
             sprite.cursor = 'pointer';
@@ -126,16 +124,5 @@ export class ItemFactory {
         if (attachment.rotation) {
             sprite.rotation = (attachment.rotation * Math.PI) / 180;
         }
-    }
-
-    private createNameLabel(text: string): PIXI.Text {
-        return new PIXI.Text({
-            text,
-            style: {
-                fontSize: 10,
-                fill: 0xffff00,
-                stroke: { color: 0x000000, width: 2 }
-            }
-        });
     }
 }

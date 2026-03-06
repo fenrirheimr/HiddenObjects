@@ -1,7 +1,6 @@
 import * as PIXI from 'pixi.js';
 
 export interface DebugData {
-    currentSkin: string;
     collectedCount: number;
     totalItems: number;
     cameraX: number;
@@ -32,9 +31,7 @@ export class DebugInfo {
 
     update(data: DebugData): void {
         this.text.text = 
-            `Skin: ${data.currentSkin.split('/').pop()}\n` +
-            `Found: ${data.collectedCount}/${data.totalItems}\n` +
-            `Camera: (${Math.round(data.cameraX)},${Math.round(data.cameraY)})`;
+            `Найдено: ${data.collectedCount}/${data.totalItems}`
     }
 
     setVisible(visible: boolean): void {

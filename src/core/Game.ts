@@ -52,7 +52,6 @@ export class Game {
             this.application.stage.addChild(this.worldContainer);
             this.application.stage.addChild(this.uiContainer);
 
-            // Создаем AnimationManager после инициализации application
             this.animationManager = new AnimationManager(this.application.ticker);
 
             await this.loadAssets();
@@ -117,7 +116,7 @@ export class Game {
         this.gameState.currentSkin = GAME_CONFIG.items.availableSkins[randomIndex];
     }
 
-    private handleItemCollected(): void {
+    private handleItemCollected(item: any): void {
         this.gameState.collectedCount++;
 
         if (this.gameState.collectedCount === this.gameState.totalItems) {
@@ -221,7 +220,6 @@ export class Game {
         this.cameraController.updateInertia();
         
         this.uiManager.updateDebug({
-            currentSkin: this.gameState.currentSkin,
             collectedCount: this.gameState.collectedCount,
             totalItems: this.gameState.totalItems,
             cameraX: this.worldContainer.x,
