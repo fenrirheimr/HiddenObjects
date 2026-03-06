@@ -24,14 +24,14 @@ export class DebugInfo {
             }
         });
         text.x = 10;
-        text.y = 30;
+        text.y = 50;
         this.uiContainer.addChild(text);
         return text;
     }
 
     update(data: DebugData): void {
         this.text.text = 
-            `Найдено: ${data.collectedCount}/${data.totalItems}`
+            `Найдено: ${data.collectedCount}/${data.totalItems}\n`
     }
 
     setVisible(visible: boolean): void {

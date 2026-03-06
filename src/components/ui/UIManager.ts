@@ -23,7 +23,7 @@ export class UIManager {
 
     private createHelpText(): PIXI.Text {
         const text = new PIXI.Text({
-            text: 'Можно перетаскивть поле игры мышкой или перемещаться при помощи стрелочеки или W.A.S.D.',
+            text: 'Можно перетаскивть поле игры мышкой \nили перемещаться при помощи стрелочеки или W.A.S.D.',
             style: {
                 fontSize: 13,
                 fill: 0xcccccc,
